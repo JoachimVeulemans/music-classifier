@@ -1,0 +1,8 @@
+node_modules/
+.vs/
+.idea/
+*.pyc
+frontend/dist/
+frontend/src/tests/
+
+*.pem

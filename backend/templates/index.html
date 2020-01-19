@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Brainjar Cat-classifier!</h1>
+			<hr/>
+			<div class="container">
+						<h2>Select image to upload:</h2>
+			      <form action="/upload" method="post" enctype="multipart/form-data">
+								  <input type="file" name=file>
+									<br><br>
+								<button type="submit" class="btn btn-primary" value="Upload Image">Submit</button>
+			      </form>
+						<br/><br/>
+						<h2>Submit a URL:</h2>
+			      <form action="/classify-url" method="get">
+			          <input type="url" name="url" class="form-control"><br><br>
+								<button type="submit" class="btn btn-primary" value="Fetch and analyze image">Submit</button>
+			      </form>
+			</div>
+      
+      
+      
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+{% endblock %}
