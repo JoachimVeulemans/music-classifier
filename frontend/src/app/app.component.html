@@ -1,0 +1,53 @@
+<div class="container-fluid m-3">
+    <div class="row mb-2">
+        <h1>Neural Networks Music Instruments Classifier</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-12">
+            <div class="row">
+                <h2>Upload</h2>
+            </div>
+            <div class="row">
+                <h3 class="mr-2">Upload via file:</h3>
+                <form enctype="multipart/form-data">
+                    <input class="form-control" #file type="file" (change)="handleFileInput($event.target.files)" id="file" name="file">
+                </form>
+            </div>
+            <div class="row mt-5">
+                <h3 class="mr-2">Upload via URL:</h3>
+                <form method="get">
+                    <input class="form-control" #url type="url" name="url" [(ngModel)]="uploadURL">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <div class="row">
+                <h2>Preview</h2>
+                <img *ngIf="uploadURL === ''" src="" id="uploadImagePreview" alt="You haven't uploaded a valid file or inserted a valid link.">
+                <img *ngIf="uploadURL !== ''" src="{{uploadURL}}" alt="The link you have entered is not valid.">
+            </div>
+        </div>
+        <div class="col-md-1 col-sm-12">
+            <div class="row">
+                <h2>Calculate</h2>
+            </div>
+            <div>
+                    <button *ngIf="uploadURL === ''" class="btn btn-primary" (click)="upload()" >Calculate</button>
+                    <button *ngIf="uploadURL !== ''" class="btn btn-primary" (click)="classifyUrl()" >Calculate</button>
+                </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="row">
+                <h2>Predictions</h2>
+            </div>
+            <div class="row">
+                    <canvas baseChart
+                        [data]="doughnutChartData"
+                        [labels]="doughnutChartLabels"
+                        [chartType]="doughnutChartType"
+                        [options]="doughnutChartOptions"
+                        ></canvas>
+            </div>
+        </div>
+    </div>
+</div>
