@@ -1,7 +1,7 @@
 python-dateutil==2.6.1
 starlette===0.13.0
 uvicorn===0.10.8
-torch===0.1.2
+torch===1.4.0
 fastai===1.0.60
 aiohttp===3.6.2
 asyncio===3.4.3
