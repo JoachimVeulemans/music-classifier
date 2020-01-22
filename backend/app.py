@@ -16,37 +16,16 @@ from fastai.vision import (load_learner, defaults, open_image)
 origin="localhost:4200"
 
 app = Starlette(debug=True)
-app.mount('/static', StaticFiles(directory='statics'), name='static')
 app.add_middleware(CORSMiddleware, allow_headers=["*"], allow_origins=[origin, "*"], allow_methods=['*'],  allow_credentials=True)
 defaults.device = torch.device('cpu')
 path = Path.cwd()
 file = 'model.pkl'
 learner = load_learner(path, file)
-templates = Jinja2Templates(directory='templates')
 
 
 @app.route("/")
-def form(request):
-    return HTMLResponse(
-        """
-        <form action="/upload" method="post" enctype="multipart/form-data">
-            Select image to upload:
-            <input type="file" name="file">
-            <input type="submit" value="Upload Image">
-        </form>
-        Or submit a URL:
-        <form action="/classify-url" method="get">
-            <input type="url" name="url">
-            <input type="submit" value="Fetch and analyze image">
-        </form>
-    """)
-
-
-@app.route('/index')
-async def form_template(request):
-    template = "index.html"
-    context = {"request": request}
-    return templates.TemplateResponse(template, context)
+def root(request):
+    return HTMLResponse("Server up & running!")
     
 
 @app.route("/classify-url", methods=["GET"])
