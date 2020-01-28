@@ -5,3 +5,4 @@ fastai===1.0.60
 aiohttp===3.6.2
 asyncio===3.4.3
 aiofiles===0.4.0
+python-multipart===0.0.5
