@@ -6,3 +6,6 @@ aiohttp===3.6.2
 asyncio===3.4.3
 aiofiles===0.4.0
 python-multipart===0.0.5
+parameterized==0.7.1
+pytest==5.4.1
+pytest-cov==2.8.1

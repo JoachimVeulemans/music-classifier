@@ -1,0 +1,17 @@
+# Python - Backend - CD
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerHub'
+    repository: 'joachimveulemans/music-instruments-classifier'
+    command: 'buildAndPush'
+    Dockerfile: 'backend/Dockerfile'
+    buildContext: 'backend'
+    tags: 'backend'
