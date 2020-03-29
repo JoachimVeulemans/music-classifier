@@ -29,4 +29,4 @@ WORKDIR /app
 ENTRYPOINT [ "python3.6" ]
 
 # 11 - Launch app.py in command line
-CMD [ "app.py" ]
+CMD [ "application.py" ]
