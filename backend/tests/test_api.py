@@ -10,8 +10,6 @@ from parameterized import parameterized, parameterized_class
 
 class TestApi(unittest.TestCase):
     def setUp(self):
-        self.myapp = app.test_client()
-        self.myapp.testing = True    
         self.headers = {
             'ContentType': 'application/json',
             'dataType': 'json'
