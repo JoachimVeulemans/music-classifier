@@ -9,8 +9,8 @@ pool:
 steps:
 - task: Docker@2
   inputs:
-    containerRegistry: 'DockerHub'
-    repository: 'joachimveulemans/music-instruments-classifier'
+    containerRegistry: 'DockerHubJoachim'
+    repository: 'music-instruments-classifier'
     command: 'buildAndPush'
     Dockerfile: 'frontend/Dockerfile'
     buildContext: 'frontend'

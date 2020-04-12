@@ -15,7 +15,7 @@ If you want to run the project locally on your own computer, you can do so in tw
 
 Here is assumed that you have [Docker](https://www.docker.com/get-started) installed correctly.
 
-Start of by building the images: `.\00_build_images.cmd` or `./00_build_images.sh`. Alternatively, you can also pull the images that are already build by: `.\00b_pull_images.cmd` or `./00b_pull_images.sh`.
+Start of by building the images: `.\00_build_images.cmd` or `./00_build_images.sh`.
 
 #### Frontend
 
@@ -40,5 +40,5 @@ There is assumed that you have [NPM](https://www.npmjs.com/) and [Python 3](http
 
 1. Go the the backend directory by: `cd backend`.
 2. Install dependencies by: `pip install -r requirements.txt`.
-3. Run the project by: `python3 app.py`.
+3. Run the project by: `python3 application.py`.
 4. You can now go to this address in your browser: [localhost:443](http://localhost:443).
